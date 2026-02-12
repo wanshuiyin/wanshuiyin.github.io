@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head>
+      <title>扩散模型与表征&amp;流型学习</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/yangruofeng/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.20/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h2 id="扩散模型与表征流型学习有一些因果在五年前就种下">扩散模型与表征&amp;流型学习：有一些因果在五年前就种下 </h2>
+<h5 id="作者ruofeng-yang-杨若峰-phd-candidate-sjtu-2022-2027-expected">作者：Ruofeng Yang, 杨若峰, PhD candidate SJTU (2022-2027 (Expected)) </h5>
+<h6 id="interest-areadiffusion-models-theory-image-video-post-training-dllm-ssl-rl">Interest Area：Diffusion Models (Theory, Image, Video, Post training), DLLM, SSL, RL </h6>
+<hr>
+<p>虽然一直在玩梗说CV25年就是把扩散模型的中间层或者潜空间和自监督SSL 模型对齐之间度过的，但是玩梗归玩梗，实际静下心来想想其实很多积累在四五年前就已经完成了 (甚至从kaiming 和 saining的MoCO就开始了，感觉这也是为什么两位dalao能够在今年对生成式模型有着如此洞见)。</p>
+<p>我自己梳理了一下各类文章的思路每一部分都加了一点点自己的思考，基本上是按照时间顺序从上到下的</p>
+<p>(1)从diffusion model的objective 开始说明他自己天然的就是一个SSL 模型，</p>
+<p>(2) 到扩散模型的一些理论分析它自身的SSL 模型学习到的表征到底是什么样子，对应了什么特性</p>
+<p>(3) 以及自发的diffusion表征为什么不够好，以及为什么我们需要额外的SSL知识注入到表征里面去</p>
+<p>(4) 如果我们不注入表征，应该如何通过manifold 知识来改进模型训练与推理</p>
+<h4 id="part-1-扩散模型和ssl的objective-function">Part 1: 扩散模型和SSL的Objective Function </h4>
+<p>大家回忆一下，其实diffusion (RF 在这里也算一种不同的schedule的diffusion) 的训练过程中是其实是没有label的 (condition 另算)，所以这类模型天然的就是SSL 模型然后自然是有表征的 (第二部分会说明这个表征有什么作用) 。</p>
+<p>更加有趣或者说更加清楚的是Consistency Models的objective function，可以看到，</p>
+<ul>
+<li>
+<p>CT的objective function 其实很明显是具备了和之前图片自监督学习SimSiam 或者BYOL 非常类似的两边encoder一边stop gradient的方式，其实隐式的在学习数据表征。</p>
+</li>
+<li>
+<p>与此同时，我们也关注到consistency models 其实是在input x (image) output x (image)。 通过我们对于JiT的认知，其实consistency model 从某种角度上来看<strong>是在通过自监督的方式学习数据流型</strong>，降低训练难度 以达到最终的单步生成的效果。</p>
+</li>
+</ul>
+<img src="image/SimSiam.jpg" alt="SimSiam" style="zoom:45%;">
+<h4 id="part-2-扩散模型本身的ssl-表征">Part 2: 扩散模型本身的SSL 表征 </h4>
+<p>上述提及了扩散模型自己在训练过程就在学习表征了。扩散模型中间层的训练结果可以作为下游任务的表征，而且效果还不错，看起来一切ok，但是有没有可能有一些时候diffusion的表征被学习坏了呢？ 我借用Qing Qu 老师组里面两篇很有意思的可解释性文章说明，扩散模型的好表征不是那么好学习的[1] [2]：</p>
+<ul>
+<li>第一个work说的是，如果模型不具备泛化性，其优秀的表征 （随扩散时间的单峰动力学）就会逐步消失，陷入局部的记忆模式中去。</li>
+</ul>
+<img src="image/representation1.jpg" alt="representation1" style="zoom:45%;">
+<ul>
+<li>第二个work 说的是，如果不好好训练diffusion，扩散模型学习到的表征完全就是spiky的，只有比较好的扩散模型才能学习到比较balanced 的特征, 充分挖掘到数据分布的特征，具备比较良好的泛化性</li>
+</ul>
+<img src="image/representation2.jpg" alt="representation1" style="zoom:45%;">
+<p>[1] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Modeling</p>
+<p>[2] Generalization of Diffusion Models Arises with a Balanced Representation Space</p>
+<h4 id="part-3-为什么额外的ssl-表征是重要的以及如何使用">Part 3: 为什么额外的SSL 表征是重要的以及如何使用 </h4>
+<p>上面说明了，扩散模型如果能够自发的学习到一个良好的表征，他的泛化性质就会得以保障 ，进而会有比较好的泛化性能。但显然，这个良好的训练过程这个度很难把握，但我们又要一个良好的表征，那我们有没有可能偷偷懒直接用SSL 模型的良好的表征加速训练呢？</p>
+<p>有的老师，从VAE level 到latent level 都是有的，从训练到inference 上面都是有的</p>
+<h5 id="a-从vae-level-方面">(a) 从VAE level 方面 </h5>
+<ul>
+<li>VAVAE [3] 直接从对齐潜在空间表征和SSL (MAE 以及DINOv2)，直接balance好了重建与生成，使得潜在空间有着丰富的语义信息</li>
+</ul>
+<img src="image/VAVAE.jpg" alt="VAVAE" style="zoom:45%;">
+<h5 id="b-从潜在空间-level">(b) 从潜在空间 level </h5>
+<p>由于我们最终是希望扩散模型的表征学的足够好嘛，我们就不要绕远路去调整VAE了，直接将扩散模型的表征和SSL 表征，这就是saining的REPA [4]</p>
+<img src="image/REPA.jpg" alt="REPA" style="zoom:55%;">
+<p>或者更加直接我直接在SSL 模型所在的潜空间上进行优化，再训一个轻量化的decoder，这就是RAE[5]。这两类注入的知识都可以显著的提升优化效率</p>
+<img src="image/RAE.jpg" alt="RAE" style="zoom:55%;">
+<h5 id="c-从推理层面角度">(c) 从推理层面角度 </h5>
+<p>从推理的角度，由于SSL 模型基本上都是在真实图片或者真实视频上面训练的，其真实感或者物理合理性都不是生成的内容可比的，因此我们可以使用其作为guidance 去inference。</p>
+<p>在这里，我分享一篇我感觉做的还蛮的的physcial video的工作，其利用V-JEPA2 predict next frame的训练范式的特性，将生成视频和真实视频放在V-JEPA2的表征（流型）上面进行对齐，效果还挺好的[6]</p>
+<img src="image/physical1.jpg" alt="physical1" style="zoom:55%;">
+<p>[3] Reconstruction vs. Generation: Taming Optimization Dilemma in Latent Diffusion Models</p>
+<p>[4] REPRESENTATION ALIGNMENT FOR GENERATION:DIFFUSION TRANSFORMERSIS EASIER THAN YOU THINK</p>
+<p>[5] REPRESENTATION ALIGNMENT FOR GENERATION:DIFFUSION TRANSFORMERSIS EASIER THAN YOU THINK</p>
+<p>[6] Inference-time Physics Alignment of Video Generative Models with Latent World Models</p>
+<h4 id="part-4-如何利用模型的流型结构">Part 4: 如何利用模型的流型结构 </h4>
+<p>上面其实一直是在数据的表征上面做文章，但我们能否直接利用数据自身的流型信息做文章，绕开表征这个概念。由于图像，视频等天然具备低维度结构，我们如果能够直接找到数据流型结构，也应该能够大大提升训练效率</p>
+<ul>
+<li>我们近期的ICLR 26的工作也证明了，如果VAE manifold 找的足够好，2层神经网络的MoE 架构对于生成ImageNet 级别的数据集来说绰绰有余[7]</li>
+</ul>
+<img src="image/MOE.jpg" alt="MOE" style="zoom:45%;">
+<p>[7] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts</p>
+<ul>
+<li>
+<p>另外一系列非常有意思的工作或者想法是kaiming的x pred，如果数据有低维度流行结构，那预测低维度x 肯定会比预测全空间vector 或者噪声更加的直接，也会导致更加优秀的结果 (JiT [8] 以及一系列pixel space的优秀工作)</p>
+<img src="image/JiT.jpg" alt="JiT" style="zoom:45%;">
+</li>
+<li>
+<p>与此同时，还有一些工作在video 上观测到在inference time 反复预测数据流型predict perturb 会逐渐locailize到真实数据流型，也是一个非常直接有用的方法[9]</p>
+<img src="image/PP.jpg" alt="PP" style="zoom:45%;">
+</li>
+</ul>
+<p>[8] Back to Basics: Let Denoising Generative Models Denoise</p>
+<p>[9] Self-Refining Video Sampling</p>
+<h3 id="summary">Summary: </h3>
+<p>总的而言，今年diffusion 生成领域对于数据的处理脱离比较粗暴的方式，开始充分利用数据的特性和先验进行训练。但是对于这些数据结构的构造和设计都还比较的roughly，感觉还是有一定work的空间的，也欢迎大家与我进行交流讨论！</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
