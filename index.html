@@ -1,405 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ruofeng Yang's homepage.">
-  <meta name="keywords" content="Ruofeng Yang, Haochen, Zhaoxiang Zhang, SJTU, CASIA, Deep Learning, Computer Vision, Segmentation, Semi-Supervised Learning, SSL, Domain Adaptation, UDA, DA">
-  <meta name="author" content="Ruofeng Yang">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruofeng Yang — Homepage</title>
 
-  <title>Ruofeng Yang (杨若峰)</title>
+<meta name="generator" content="ARIS Homepage Generator (theory-minimal, v1)">
+<meta name="aris:source-path" content="profile.yml">
+<meta name="aris:source-sha256" content="e1f484a33b88ba50">
+<meta name="aris:generated-at" content="2026-05-23T05:20:23.407265+00:00">
+<meta name="aris:audit-verdict" content="WARN">
+<meta name="aris:persona" content="theory-minimal">
 
-  <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/academicons-1.8.6/css/academicons.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/style.css">
-  <link rel="icon" type="image/png" href="assets/figures/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="assets/figures/large-icon.png">
-  
-  <style>
-    /* --- 样式优化开始 --- */
-    body { 
-        /* 字体保持您喜欢的 Arial/Helvetica */
-        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; 
-        /* 字体大小调整为 16px (原来是 15px) */
-        font-size: 16px; 
-        /* 行高稍微增加到 1.6，防止文字变大后显得拥挤 */
-        line-height: 1.6;
-        color: #333; 
-    }
-    p { margin-bottom: 12px; } 
-    li { margin-bottom: 6px; } 
-    h1, h2, h3 { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #000; }
-    
-    /* 标题也相应调大一点，保持比例 */
-    h2 { margin-top: 30px; margin-bottom: 15px; font-size: 24px;} 
-    h3 { margin-top: 25px; margin-bottom: 12px; font-size: 20px;}
-    
-    /* 论文标题调大 */
-    .paper-title { font-weight: bold; font-size: 17px; color: #000;} 
-    .paper-author { font-size: 15px; } /* 作者名字大小 */
-    
-    td { vertical-align: middle; }
-    /* --- 样式优化结束 --- */
-  </style>
+
+
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6b6b6b;
+  --rule: #e5e5e5;
+  --accent: #1a4a8c;
+  --max-width: 980px;
+  --body-size: 18px;
+  --line-height: 1.7;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
+               Helvetica, Arial, sans-serif;
+  font-size: var(--body-size);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px 28px 80px;
+}
+
+/* --- header / masthead --- */
+.masthead {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+.masthead .photo {
+  width: 240px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 3px;
+  object-fit: cover;
+  background: var(--bg-soft);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+}
+.masthead .identity h1 {
+  margin: 0 0 6px;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.masthead .identity .name-native {
+  font-size: 22px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  margin-left: 10px;
+}
+.masthead .identity .title-affil {
+  color: var(--ink-soft);
+  font-size: 18px;
+  margin: 6px 0 14px;
+  line-height: 1.5;
+}
+.masthead .identity .email {
+  color: var(--ink-muted);
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.masthead .identity .email a { color: var(--ink-muted); }
+.social-strip {
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+.social-strip a {
+  color: var(--ink-soft);
+  margin-right: 14px;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-muted);
+}
+.social-strip a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+@media (max-width: 600px) {
+  .masthead { flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+  .masthead .photo { width: 160px; height: auto; }
+  .social-strip a { margin: 0 7px; }
+}
+
+/* --- sections --- */
+section {
+  margin: 48px 0;
+}
+section h2 {
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+section p { margin: 0 0 12px; }
+
+/* --- bio --- */
+.bio p { font-size: 17px; color: var(--ink); }
+.bio a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+.bio a:hover { border-bottom-color: var(--accent); }
+
+/* --- research --- */
+.research ul { padding-left: 22px; margin: 0; }
+.research li { margin: 6px 0; color: var(--ink-soft); }
+.research li b { color: var(--ink); }
+
+/* --- education --- */
+.education .edu-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+.education .edu-item .degree { color: var(--ink); }
+.education .edu-item .dates { color: var(--ink-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* --- featured projects: restrained academic treatment, NOT marketing card.
+   Placed AFTER publications (like a "Software" section in a faculty homepage). --- */
+.featured-project {
+  margin: 36px 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+.featured-project + .featured-project { margin-top: 18px; }
+/* Float-right image: text wraps around hero SVG; once image ends, text fills full width.
+   (User-requested: 2-col only until image bottom, then 1-col continues.) */
+.featured-project .fp-logo-float {
+  float: right;
+  width: 48%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 0 18px 28px;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: white;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.featured-project::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Open problems sub-section inside the ARIS featured card */
+.featured-project .fp-op-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+.featured-project .fp-open-problems {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.featured-project .fp-open-problems li { padding: 4px 0; }
+
+/* Mobile: image no longer floats — stacks above text full-width */
+@media (max-width: 800px) {
+  .featured-project .fp-logo-float {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 18px 0;
+  }
+}
+.featured-project .fp-name {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.featured-project .fp-tagline {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 10px 0 6px;
+}
+.featured-project .fp-subtitle {
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+}
+.featured-project .fp-stats {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.85;
+}
+.featured-project .fp-stats li {
+  display: inline;
+}
+.featured-project .fp-stats li::after {
+  content: " · ";
+  color: var(--ink-muted);
+  margin: 0 2px;
+}
+.featured-project .fp-stats li:last-child::after { content: ""; }
+.featured-project .fp-stats .stat-label {
+  color: var(--ink-muted);
+}
+.featured-project .fp-stats .stat-label::after { content: " "; }
+.featured-project .fp-stats .stat-value {
+  color: var(--ink);
+  font-weight: 500;
+}
+.featured-project .fp-stats .stat-value a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--ink-muted); }
+.featured-project .fp-stats .stat-value a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.featured-project .fp-links {
+  font-size: 16px;
+  margin: 12px 0;
+}
+.featured-project .fp-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.featured-project .fp-links a:hover { text-decoration: underline; }
+.featured-project .fp-elevator {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 14px 0;
+  line-height: 1.65;
+}
+.featured-project .fp-subprojects-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.featured-project .fp-subprojects {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+.featured-project .fp-subprojects li {
+  padding: 2px 0;
+  color: var(--ink-soft);
+}
+.featured-project .fp-subprojects li a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.featured-project .fp-subprojects li a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* (Mobile rules for featured-project are defined above with fp-grid) */
+
+/* --- publications --- */
+.pubs .pub-preamble {
+  font-size: 14px;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--rule);
+}
+.pubs h3.pub-group {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin: 28px 0 10px;
+  padding: 0;
+  border: none;
+}
+.pubs h3.pub-group:first-of-type { margin-top: 8px; }
+.pubs .pub-item {
+  padding: 16px 12px 16px 14px;
+  background: var(--bg-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 3px 3px 0;
+  margin-bottom: 14px;
+}
+.pubs .pub-item:last-child { margin-bottom: 0; }
+.pubs .pub-item-with-thumb {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-template-areas:
+    "thumb content"
+    "desc desc";
+  gap: 14px 20px;
+  align-items: start;
+}
+.pubs .pub-item-with-thumb .pub-thumb-wrap { grid-area: thumb; }
+.pubs .pub-item-with-thumb .pub-content { grid-area: content; }
+.pubs .pub-item-with-thumb > .pub-description { grid-area: desc; margin-top: 0; }
+.pubs .pub-thumb-wrap {
+  display: block;
+  overflow: hidden;
+  max-height: 150px;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+}
+.pubs .pub-thumb {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  display: block;
+}
+.pubs .pub-content { min-width: 0; }
+.pubs h3.pub-group { margin: 28px 0 10px; }
+@media (max-width: 600px) {
+  .pubs .pub-item-with-thumb { grid-template-columns: 1fr; gap: 10px; }
+  .pubs .pub-thumb { max-height: 180px; max-width: 280px; margin: 0 auto; }
+}
+.pubs .pub-item:last-child { border-bottom: none; }
+.pubs .pub-title {
+  color: var(--ink);
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.pubs .pub-authors {
+  color: var(--ink-soft);
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.pubs .pub-authors .you { font-weight: 600; color: var(--ink); }
+.pubs .pub-venue {
+  color: var(--ink-muted);
+  font-size: 15px;
+  font-style: italic;
+  margin: 0 0 6px;
+}
+.pubs .pub-links {
+  font-size: 15px;
+  margin-top: 4px;
+}
+.pubs .pub-links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 10px;
+}
+.pubs .pub-links a:hover { text-decoration: underline; }
+.pubs .pub-badge {
+  display: inline-block;
+  font-size: 13px;
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.pubs .pub-spotlight { border-left-width: 4px; }
+.pubs .pub-description {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  line-height: 1.6;
+  padding: 8px 10px;
+  background: rgba(26, 74, 140, 0.04);
+  border-left: 2px solid var(--rule);
+  border-radius: 0 3px 3px 0;
+}
+.pubs .pub-description strong { color: var(--ink); }
+.pubs .scholar-deflect {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+/* --- news --- */
+.news .news-item {
+  display: flex;
+  gap: 14px;
+  padding: 8px 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.news .news-item .date {
+  color: var(--ink-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  min-width: 76px;
+}
+
+/* --- awards --- */
+.awards .award-item {
+  padding: 7px 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.awards .award-item .award-title { color: var(--ink); }
+.awards .award-item .award-meta { color: var(--ink-muted); font-size: 15px; }
+.awards .ps-preamble {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+/* --- footer --- */
+footer.aris-footer {
+  margin-top: 80px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  font-size: 14px;
+  color: var(--ink-muted);
+  text-align: center;
+  line-height: 1.65;
+}
+footer.aris-footer .aris-mark {
+  display: inline-block;
+  font-size: 11px;
+  color: #a0a0a0;
+  margin-top: 6px;
+}
+footer.aris-footer a { color: var(--ink-muted); }
+footer.aris-footer a:hover { color: var(--accent); }
+
+/* --- print --- */
+@media print {
+  .page { padding: 20px; max-width: none; }
+  footer.aris-footer .aris-mark { border: none; }
+  section { page-break-inside: avoid; }
+}
+</style>
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.1014.0" data-gr-ext-installed="">
+<body>
+<main class="page">
 
-<table width="980px" align="center" border="0">
-<tbody>
-<tr>
-<td></td>
-<td valign="top">
+  <header class="masthead">
+    <img class="photo" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/me_v2.jpg" alt="" loading="lazy">
+    <div class="identity">
+      <h1>Ruofeng Yang <span class="name-native">杨若峰</span></h1>
+      <div class="title-affil">Ph.D. Candidate · Shanghai Jiao Tong University, John Hopcroft Center for Computer Science</div>
+      <div class="email">Email: <a href="mailto:wanshuiyin@sjtu.edu.cn">wanshuiyin@sjtu.edu.cn</a><br>WeChat: yrf13618645542<br>Office: Room 1119, No.1 Software Engineering Building, Dongchuan Road 800, Shanghai, China</div>
+      <nav class="social-strip"><a href="https://scholar.google.com.hk/citations?user=Cw9HDacAAAAJ&amp;hl=zh-CN" rel="noopener">Scholar</a>
+      <a href="https://github.com/wanshuiyin" rel="noopener">GitHub</a></nav>
+    </div>
+  </header>
 
-<br>
-<table style="font-size: 12pt;" width="100%" border="0">
-<tbody>
-  <tr>
-    <td width="30%"> 
-      <img width="250" src="./me_v2.jpg" style="max-width: 100%; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);"> 
-    </td>
+  <section class="bio"><h2>Bio</h2>
+<p>I am a Ph.D. candidate at the <a href="https://www.cs.sjtu.edu.cn/" rel="noopener">John Hopcroft Center for Computer Science</a>, Shanghai Jiao Tong University, advised by <a href="https://shuaili8.github.io/" rel="noopener">Prof. Shuai Li (李帅)</a>. I am currently a visiting research intern at the <a href="https://www.comp.nus.edu.sg/" rel="noopener">School of Computing, NUS</a> (Jan – Jun 2026), supervised by Prof. Xiaokui Xiao (IEEE Fellow), funded by <strong>国家留学基金委人工智能卓越专项</strong>.</p>
+<p>My research focuses on the <strong>theory of diffusion models</strong> and <strong>reinforcement learning</strong> — from sample complexity and consistency models to <strong>RL post-training</strong> for 3D and video generation (Tencent Rhino-Bird, Meituan Longcat-Video), and increasingly on <strong>long-horizon agents</strong> and <strong>multi-agent auto-research</strong>. I created <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep" rel="noopener"><strong>ARIS — Auto Research in Sleep</strong></a>, an open-source long-horizon multi-agent auto-research platform (10K+ GitHub stars, HuggingFace Daily Papers #1, VALSE 2026 talk).</p>
+<p><strong>He anticipates graduating in 2027 for industrial research positions and is also open to internship opportunities at any time. If you're interested, please feel free to reach out via email or WeChat (yrf13618645542).</strong></p>
+</section>
 
-    <td>
-      <div class="col-xs-12 col-sm-8">
-        <h1 style="font-size: 34px; margin-bottom: 10px; margin-top: 0;">
-          <strong>Ruofeng Yang (杨若峰)</strong><br>
-          <small style="font-size: 20px; color: #555; font-weight: normal;">Shanghai Jiaotong University</small>
-        </h1>
-        <p><a href="https://scholar.google.com.hk/citations?user=Cw9HDacAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> / <a href="./eaf89ad8d25bb831e14759b54b6afaf.jpg" target="_blank">RedNote</a></p>
-        <p>Email: wanshuiyin[at]sjtu.edu.cn</p>
-        <p>Wechat: yrf13618645542</p>
-        <p>Office: Room 1119, No.1 Software Engineering Building, Dongchuan Road 800, Shanghai, China</p>
-      </div>
-    </td>
-  </tr>
-</tbody>
-</table>
+  <section class="awards"><h2>Research Experiences</h2>
+<div class="award-item"><span class="award-title">Research Intern at <b>Meituan · Longcat-Video Team</b></span> <span class="award-meta">— 美团北斗人才计划 · 2025-06 – 2025-12</span></div>
+<div class="award-item"><span class="award-title">Research Intern at <b>Tencent IEG</b></span> <span class="award-meta">— 犀牛鸟精英人才计划 (Rhino-Bird Elite Program) · 2024-03 – 2024-09</span></div>
+</section>
 
-<br>
-<h2>About me</h2>
-<p style="text-align: justify;">
-I am a 4-year PhD student in computer science in <a href="https://jhc.sjtu.edu.cn/">John Hopcroft Center,</a> <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a> under the supervision of <a href="https://shuaili8.github.io/">Prof. Shuai Li</a> since Sept. 2022.
-<br> 
-My research focuses on diffusion models and reinforcement learning. Previously, I worked on the theoretical analysis of diffusion models and reinforcement learning algorithms. Currently, I am interested in integrating diffusion models with reinforcement learning, including reinforcement learning fine-tuning (RLFT) for 3D generation (IEG, Tencent Rhino-Bird Research Elite Program, 犀牛鸟精英人才计划) and video generation (美团北斗人才计划, Longcat-video base model team).
-</p>
-<p style="text-align: justify;">
-  His research focuses on computer vision generation, particularly on the following topics:
-</p>
+  <section class="research"><h2>Research Interests</h2>
 <ul>
-  <li>Diffusion Models (Image, Video, Theory, Post Training)</li>
+  <li>Diffusion Models (Image, Video, Theory, Post-Training)</li>
   <li>Deep Learning Theory</li>
   <li>Reinforcement Learning and RLHF</li>
+  <li>Long-horizon Multi-Agent Auto-Research (<strong>ARIS</strong>)</li>
 </ul>
-<p style="margin-top: 15px;">
-  <strong>He anticipates graduating in 2027 for industrial research positions! He is also open to internship opportunities at any time.</strong> If you're interested, please feel free to reach out via email or WeChat (yrf13618645542).
-</p>
-  
-<br>
-<h2>Research Experiences</h2>
-<ul>
-  <li>Intern at the National University of Singapore (NUS), School of Computing, 2026/01-2026/07, Singapore.</li>
-  <li>Intern at Meituan, Longcat-Video Team as a member of the 北斗人才计划.</li>
-  <li>Intern at Tencent IEG, Game AI center as a member of the Tencent Rhino-Bird Research Elite Program (犀牛鸟精英人才计划), 2023, Shenzhen.</li>
-</ul>
-  
-<br>
-<h2>News</h2>
-<ul>
-  <li>Released <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep" target="_blank">Auto-claude-code-research-in-sleep (ARIS)</a>: Claude Code skills for autonomous ML research — cross-model review loops that run while you sleep.
+</section>
+
+  <section class="education"><h2>Education</h2>
+<div class="edu-item"><span class="degree">Ph.D. in Computer Science · Shanghai Jiao Tong University · advised by Prof. Shuai Li (李帅)</span><span class="dates">2022-09 – 2027-06 (expected)</span></div>
+<div class="edu-item"><span class="degree">B.E., Naval Architectural, Ocean &amp; Civil Engineering · Shanghai Jiao Tong University</span><span class="dates">2018-09 – 2022-06</span></div>
+</section>
+
+  <section class="featured-project" id="fp-aris"><img class="fp-logo-float" src="https://raw.githubusercontent.com/wanshuiyin/Auto-claude-code-research-in-sleep/main/docs/hero_combined.svg" alt="ARIS workflow diagram" loading="lazy"><h2 class="fp-name">ARIS — Auto Research in Sleep</h2><div class="fp-tagline">Lightweight Markdown-only skills for autonomous ML research — cross-model adversarial review loops, idea discovery, and full experiment automation. No framework, no lock-in.</div><div class="fp-subtitle">Invited talk @ VALSE 2026 · 持续学习与持续智能体分论坛</div><ul class="fp-stats"><li><span class="stat-label">GitHub Stars</span><span class="stat-value"><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/stargazers" rel="noopener">10,382 ★</a></span></li><li><span class="stat-label">HF Daily Papers</span><span class="stat-value"><a href="https://huggingface.co/papers/2605.03042" rel="noopener">#1 of the day</a></span></li><li><span class="stat-label">Talk</span><span class="stat-value">VALSE 2026</span></li><li><span class="stat-label">Award</span><span class="stat-value">AI Digital Crew · Project of the Day</span></li><li><span class="stat-label">Featured</span><span class="stat-value">PaperWeekly · awesome-agent-skills</span></li><li><span class="stat-label">Skills shipped</span><span class="stat-value">74+</span></li><li><span class="stat-label">Platforms</span><span class="stat-value">7+ (Claude Code · Codex CLI · Cursor · Trae · Antigravity · Copilot CLI · OpenClaw)</span></li></ul><nav class="fp-links"><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep" rel="noopener">GitHub</a> · <a href="https://huggingface.co/papers/2605.03042" rel="noopener">Paper</a> · <a href="https://arxiv.org/abs/2605.03042" rel="noopener">arXiv</a> · <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/raw/main/docs/aris_intro_slides.pdf" rel="noopener">Talk Slides</a> · <a href="https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html" rel="noopener">Intro (HTML)</a> · <a href="https://mp.weixin.qq.com/s/tDniVryVGjDkkkWl-5sTkQ" rel="noopener">PaperWeekly</a> · <a href="https://github.com/VoltAgent/awesome-agent-skills" rel="noopener">awesome-list</a> · <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/releases/latest" rel="noopener">Releases</a> · <a href="https://star-history.com/#wanshuiyin/Auto-claude-code-research-in-sleep&amp;Date" rel="noopener">Star History</a></nav><p class="fp-elevator">An open-source AI research-agent platform: a primary LLM (Claude / GPT / Kimi / …) drives the full ML research lifecycle — idea discovery, experiment design, paper writing, rebuttals — while a <em>different-family</em> reviewer model (e.g. GPT-5.5 xhigh via Codex MCP) adversarially audits every step. All expressed as plain Markdown <code>SKILL.md</code> files with zero framework lock-in.</p><div class="fp-subprojects-label">Sub-projects:</div><ul class="fp-subprojects"><li><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/docs/ARIS-Code-README_EN.md" rel="noopener"><strong>ARIS-Code</strong></a> — Standalone CLI runtime — multi-provider, no Claude Code dependency required.</li><li><a href="https://github.com/wanshuiyin/ARIS-Anything" rel="noopener"><strong>ARIS-Anything</strong></a> — Generalize the ARIS loop from 科研 to 研究 (investment DD, legal, journalism, post-mortems).</li><li><a href="https://github.com/wanshuiyin/ARIS-in-AI-Offer" rel="noopener"><strong>ARIS-in-AI-Offer</strong></a> — 23 bilingual ML/LLM/diffusion/agent interview cheat sheets — auto-generated by ARIS's render-html workflow.</li><li><strong>ARIS-Movie</strong> — (Upcoming) Use ARIS to generate long-form video — multi-agent narrative planning + video diffusion.</li><li><strong>Oh-My-ARIS</strong> — (Upcoming) TUI + GUI for ARIS workflows — team-facing research platform.</li></ul><div class="fp-op-label">Open problems explored in this line of work:</div><ol class="fp-open-problems"><li><strong>Self-Evolution Training for base models.</strong> Since every training-run produces a sequence of benchmark scores (variable feedback), this system can be used to discover new mechanisms or algorithms that improve the efficiency or performance of base models themselves.</li><li><strong>Auto Research as the "math" task of the long-horizon agent for post-training.</strong> Treating the entire research workflow as a hard reasoning task, then post-training agents specifically on its successes.</li></ol></section>
+
+  <section class="news"><h2>News</h2>
+<div class="news-item"><span class="date">2026-01</span><span class="content">Started visiting research internship at NUS School of Computing (国家留学基金委人工智能卓越专项, supervised by Prof. Xiaokui Xiao).</span></div>
+<div class="news-item"><span class="date">2026-04</span><span class="content">ARIS reached <strong>10K+ GitHub stars</strong>; technical report featured as HuggingFace Daily Papers #1 (<a href="https://huggingface.co/papers/2605.03042" rel="noopener">arXiv:2605.03042</a>). <a href="https://star-history.com/#wanshuiyin/Auto-claude-code-research-in-sleep&Date"><img src="https://api.star-history.com/svg?repos=wanshuiyin/Auto-claude-code-research-in-sleep&type=Date" alt="ARIS star history" style="max-width:480px;margin-top:10px;display:block;border:1px solid #e5e5e5;border-radius:4px;"></a></span></div>
+<div class="news-item"><span class="date">2026-03</span><span class="content">ARIS won <strong>AI Digital Crew Project of the Day</strong>.</span></div>
+<div class="news-item"><span class="date">2026</span><span class="content">Invited talk at <strong>VALSE 2026</strong> on ARIS (持续学习与持续智能体分论坛).</span></div>
+<div class="news-item"><span class="date">2026</span><span class="content">Two papers at <strong>ICLR 2026</strong> (MoE structure for diffusion; few-shot pretraining warm-up).</span></div>
+<div class="news-item"><span class="date">2025</span><span class="content">"Improved Discretization Complexity Analysis of Consistency Models" accepted at <strong>ICML 2025</strong>.</span></div>
+<div class="news-item"><span class="date">2025</span><span class="content">Awarded the <strong>National Scholarship for Ph.D. Students</strong> from the Ministry of Education, China.</span></div>
+<div class="news-item"><span class="date">2025</span><span class="content">Joined Meituan Longcat-Video team (北斗人才计划); co-authored DFS-GRPO (SoTA T2I post-training on UniGenBench).</span></div>
+</section>
+
+  <section class="pubs"><h2>Selected Publications</h2>
+<p class="pub-preamble">As we know, diffusion models can be roughly divided into pretraining, supervised fine-tuning, RL post-training, and sampling algorithm design. My works focus on these four areas, plus the long-horizon multi-agent auto-research direction.</p>
+<h3 class="pub-group">Long-Horizon Multi-Agent Auto-Research</h3>
+<div class="pub-item pub-item-with-thumb pub-spotlight"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/Auto-claude-code-research-in-sleep/main/docs/hero_combined.svg" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">ARIS: Autonomous Research via Adversarial Multi-Agent Collaboration</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Yongcan Li, Shuai Li</div><div class="pub-venue">arXiv preprint arXiv:2605.03042, 2026</div><div class="pub-links"><a href="https://huggingface.co/papers/2605.03042" rel="noopener">[Paper]</a><a href="https://arxiv.org/abs/2605.03042" rel="noopener">[arXiv]</a><a href="https://star-history.com/#wanshuiyin/Auto-claude-code-research-in-sleep&amp;Date" rel="noopener">[Project]</a><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep" rel="noopener">[Code]</a><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/raw/main/docs/aris_intro_slides.pdf" rel="noopener">[Talk Slides]</a><a href="https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html" rel="noopener">[Intro]</a><a href="https://mp.weixin.qq.com/s/tDniVryVGjDkkkWl-5sTkQ" rel="noopener">[PaperWeekly]</a><span class="pub-badge">10K+ GitHub Stars</span><span class="pub-badge">HF Daily Papers #1</span><span class="pub-badge">VALSE 2026 Invited Talk</span><span class="pub-badge">AI Digital Crew · Project of the Day</span><span class="pub-badge">Featured · PaperWeekly · awesome-agent-skills</span></div></div></div>
+<h3 class="pub-group">Diffusion Model MoE Structure and Pretraining</h3>
+<div class="pub-item pub-item-with-thumb pub-spotlight"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/MoLR_MoG.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts</div><div class="pub-authors"><span class="you">Ruofeng Yang*</span>, Yongcan Li*, Bo Jiang, Chen Cheng, Shuai Li <em>(* equal contribution)</em></div><div class="pub-venue">ICLR, 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2601.01475" rel="noopener">[arXiv]</a></div></div></div>
+<h3 class="pub-group">Diffusion Model Supervised Fine-tuning</h3>
+<div class="pub-item pub-item-with-thumb pub-spotlight"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/CELEBA64.PNG" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Few-Shot Diffusion Models Escape the Curse of Dimensionality</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Bo Jiang, Cheng Chen, Ruinan Jin, Baoxiang Wang, Shuai Li</div><div class="pub-venue">NeurIPS, 2024</div><div class="pub-links"><a href="https://arxiv.org/abs/2406.06354" rel="noopener">[arXiv]</a><a href="https://neurips.cc/virtual/2024/poster/95694" rel="noopener">[Project]</a><span class="pub-badge">Best Paper · 2nd Prize · TongAI 2025</span></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/Good_pretrained.jpg" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Evaluating the Role of Great Pre-trained Diffusion Models in Few-shot Phase: Warm-up and Acceleration</div><div class="pub-authors"><span class="you">Ruofeng Yang*</span>, Yongcan Li*, Bo Jiang, Chen Cheng, Shuai Li <em>(* equal contribution)</em></div><div class="pub-venue">ICLR 2026 DeLTa Workshop, 2026</div><div class="pub-links"><a href="https://openreview.net/forum?id=AcTuU5Xr6r" rel="noopener">[OpenReview]</a></div></div></div>
+<h3 class="pub-group">Diffusion Model Post-Training</h3>
+<div class="pub-item"><div class="pub-title">DFS-GRPO: Reward Guided Tree Search Leads to Provable Improvement in Diffusion Models</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, <em>et al.</em></div><div class="pub-venue">Preprint, in submission, 2025</div><div class="pub-description"><strong>Meituan Longcat-Video team.</strong> As the first work, we focused on how to efficiently train diffusion models with GRPO algorithm and proposed <strong>DFS-GRPO</strong>, which achieves SoTA performance (using FLUX.1-dev as base model, proposed in 2024/05) on <strong>UniGenBench</strong> compared with all T5-based T2I models — and ranks <strong>5th among all open-source T2I models</strong>. We then focus on improving physical properties in video generation via post-training algorithms, plus reward modeling with V-JEPA2 / Qwen 3.5 and training-free methods.</div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/MV_D3PO_C.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Contrastive Guidance and Feedback: A Suitable Way to Improving 3D Consistency of Multi-view Diffusion Model</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Yaqing Zhang, Le Wan, Shuai Li</div><div class="pub-venue">Preprint, in submission, 2024</div><div class="pub-links"><a href="https://openreview.net/forum?id=ZBH4fqQwJQ" rel="noopener">[OpenReview]</a></div></div><div class="pub-description"><strong>Tencent IEG · Rhino-Bird Research Elite Program.</strong> Online DPO-style algorithm with group-relative reward design. We focus on how to improve the 3D consistency of multi-view diffusion models. We first model the 3D generation process from a theoretical perspective and prove that contrastive guidance is suitable for 3D generation. Then we train a 3D consistency feedback using the contrastive method. Finally, we achieve strong performance by fine-tuning the pre-trained model with the contrastive 3D consistency feedback and the <strong>direct preference optimization (DPO)</strong> method.</div></div>
+<h3 class="pub-group">Diffusion Model Sampling and Condition Generation</h3>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/ICML_Consistency%20.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Improved Discretization Complexity Analysis of Consistency Models: Variance Exploding Forward Process and Decay Discretization Scheme</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Bo Jiang, Cheng Chen, Shuai Li</div><div class="pub-venue">ICML, 2025</div><div class="pub-links"><a href="https://openreview.net/forum?id=CZTcRSxkfe" rel="noopener">[OpenReview]</a></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/AISTATS.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">The Polynomial Iteration Complexity for Variance Exploding Diffusion Models: Analyzing SDE and ODE Samplers</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Bo Jiang, Shuai Li</div><div class="pub-venue">AISTATS, 2025</div><div class="pub-links"><a href="https://openreview.net/forum?id=P2PdbGpzxg" rel="noopener">[OpenReview]</a></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/More_example_More_figrue.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Leveraging Drift to Improve Sample Complexity of Variance Exploding Diffusion Models</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Zhijie Wang, Bo Jiang, Shuai Li</div><div class="pub-venue">NeurIPS, 2024</div><div class="pub-links"><a href="https://neurips.cc/virtual/2024/poster/94238" rel="noopener">[Project]</a></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/RF.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Elucidating Rectified Flow with Deterministic Sampler: Polynomial Discretization Complexity for Multi and One-step Models</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Zhaoyu Zhu, Bo Jiang, Chen Cheng, Shuai Li</div><div class="pub-venue">Preprint, arXiv:2508.08735, 2025</div><div class="pub-links"><a href="https://www.arxiv.org/abs/2508.08735" rel="noopener">[arXiv]</a></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/Guidance.jpg" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Elucidating Guidance in Variance Exploding Diffusion Models: Fast Convergence and Better Diversity</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Qiuyi Yu, Bo Jiang, Chen Cheng, Shuai Li</div><div class="pub-venue">ICLR 2026 2nd DeLTa Workshop, 2025</div><div class="pub-links"><a href="https://openreview.net/forum?id=tWbasgJA68" rel="noopener">[OpenReview]</a></div></div></div>
+<h3 class="pub-group">Representation and Reinforcement Learning Theory</h3>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/SSL.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Understanding Representation Learnability of Nonlinear Self-Supervised Learning</div><div class="pub-authors"><span class="you">Ruofeng Yang</span>, Xiangyuan Li, Bo Jiang, Shuai Li</div><div class="pub-venue">AAAI, 2023</div><div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/26358" rel="noopener">[PDF]</a><a href="https://github.com/wanshuiyin/AAAI-2023-The-Learnability-of-Nonlinear-SSL" rel="noopener">[Code]</a><span class="pub-badge">Oral</span></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/POLO.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Learning Adversarial Low-rank Markov Decision Processes with Unknown Transition and Full-information Feedback</div><div class="pub-authors">Canzhe Zhao, <span class="you">Ruofeng Yang</span>, Baoxiang Wang, Xuezhou Zhang, Shuai Li</div><div class="pub-venue">NeurIPS, 2023</div><div class="pub-links"><a href="https://arxiv.org/abs/2311.07876" rel="noopener">[arXiv]</a></div></div></div>
+<div class="pub-item pub-item-with-thumb"><div class="pub-thumb-wrap"><img class="pub-thumb" src="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/LSUOB-REPS.png" alt="" loading="lazy"></div><div class="pub-content"><div class="pub-title">Learning Adversarial Linear Mixture Markov Decision Processes with Bandit Feedback and Unknown Transition</div><div class="pub-authors">Canzhe Zhao, <span class="you">Ruofeng Yang</span>, Baoxiang Wang, Shuai Li</div><div class="pub-venue">ICLR, 2023</div><div class="pub-links"><a href="https://openreview.net/forum?id=sVU54nyaA9K" rel="noopener">[OpenReview]</a></div></div></div>
+<div class="scholar-deflect">Full list on <a href="https://scholar.google.com.hk/citations?user=Cw9HDacAAAAJ&amp;hl=zh-CN" rel="noopener">Google Scholar</a>.</div>
+</section>
+
+  <section class="awards"><h2>Rewards</h2>
+<div class="award-item"><span class="award-title">National Scholarship for Ph.D. Students</span> <span class="award-meta">— Ministry of Education, China, 2025</span></div>
+<div class="award-item"><span class="award-title">Best Paper, 2nd Prize — Few-Shot Diffusion Models</span> <span class="award-meta">— TongAI 2025, 2025</span></div>
+<div class="award-item"><span class="award-title">Excellent Doctoral Academic Forum, 3rd Prize</span> <span class="award-meta">— John Hopcroft Center, SJTU, 2024</span></div>
+<div class="award-item"><span class="award-title">Outstanding Graduate</span> <span class="award-meta">— Shanghai Jiao Tong University, 2022</span></div>
+<div class="award-item"><span class="award-title">Outstanding Winner (top 0.1%)</span> <span class="award-meta">— Mathematical Contest in Modeling, 2020</span></div>
+<div class="award-item"><span class="award-title">Tung Scholarship</span> <span class="award-meta">— Tung Foundation (Hong Kong), 2020</span></div>
+<div class="award-item"><span class="award-title">Yang You Scholarship</span> <span class="award-meta">— Shanghai Jiao Tong University, 2019, 2021</span></div>
+</section>
+
+  <section class="awards"><h2>Blogs &amp; Tutorials &amp; Talks</h2>
+<div class="award-item"><span class="award-title">Diffusion and Representation Learning and Manifold Learning <em class="category-tag">(Theory &amp; Application)</em></span> <a href="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/Diffusion_Representation_Manifold.html" rel="noopener">[html]</a> <a href="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/Diffusion_Representation_Manifold.pdf" rel="noopener">[pdf]</a> <a href="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/PPT_Diffusion_Representation_Manifold.pdf" rel="noopener">[slides]</a></div>
+<div class="award-item"><span class="award-title">A Simple Introduction to Diffusion Model <em class="category-tag">(Application)</em></span> <a href="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/A_simple_understanding_of_diffusion_model.pdf" rel="noopener">[pdf]</a></div>
+<div class="award-item"><span class="award-title">Why Rectified Flow is Better? Elucidating VP, VE, and RF-based Diffusion Models <em class="category-tag">(Theory)</em></span> <a href="https://raw.githubusercontent.com/wanshuiyin/wanshuiyin.github.io/master/20250810_Why%20RF%20YangR%20slides.pdf" rel="noopener">[slides]</a></div>
+<div class="award-item"><span class="award-title">ARIS: 跨模型持久化对抗式多智能体自主科研系统</span> <span class="award-meta">— VALSE 2026 · 持续学习与持续智能体分论坛, 2026</span> <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/raw/main/docs/aris_intro_slides.pdf" rel="noopener">[slides]</a></div>
+<div class="award-item"><span class="award-title">Why Rectified Flow is Better? Elucidating VP, VE, and RF-based Diffusion Models</span> <span class="award-meta">— CSML 2025, 2025</span></div>
+<div class="award-item"><span class="award-title">Few-Shot Diffusion Models Escape the Curse of Dimensionality</span> <span class="award-meta">— TongAI 2025 (Best Paper, 2nd Prize), 2025</span></div>
+</section>
+
+  <section class="awards"><h2>Professional Services</h2>
+<p class="ps-preamble">Conference Reviewer for:</p>
+<div class="award-item">International Conference on Machine Learning (ICML) 2025, 2026</div><div class="award-item">International Conference on Learning Representations (ICLR) 2025, 2026</div><div class="award-item">International Conference on Artificial Intelligence and Statistics (AISTATS) 2025</div><div class="award-item">Neural Information Processing Systems (NeurIPS) 2024, 2025</div><div class="award-item">Autonomous Agents and Multiagent Systems (AAMAS) 2022</div>
+</section>
+
+  <section class="awards"><h2>Teaching</h2>
+<div class="award-item"><span class="award-title">AI3601 Reinforcement Learning (Undergraduate)</span><span class="award-meta"> · Teaching Assistant · Spring 2023 · 2024 · 2025</span></div>
+<div class="award-item"><span class="award-title">AI2615 Algorithm Design and Analysis</span><span class="award-meta"> · Teaching Assistant · Spring 2022</span></div>
+<div class="award-item"><span class="award-title">CS445 Combinatorics (Undergraduate)</span><span class="award-meta"> · Teaching Assistant · Fall 2020 · 2021</span></div>
+</section>
+
+  <footer class="aris-footer">
+    Last updated 2026-05-23 · <a href="audit-report.md">audit</a>
     <br>
-    <a href="https://star-history.com/#wanshuiyin/Auto-claude-code-research-in-sleep&Date"><img src="https://api.star-history.com/svg?repos=wanshuiyin/Auto-claude-code-research-in-sleep&type=Date" alt="ARIS Star History" style="max-width: 500px; margin-top: 8px;"></a>
-  </li>
-  <li>I post a blog on the relationship between diffusion and representation learning and manifold learning <a href="./Diffusion_Representation_Manifold.html" target="_blank">[html]</a><a href="./Diffusion_Representation_Manifold.pdf" target="_blank">[pdf]</a><a href="./PPT_Diffusion_Representation_Manifold.pdf" target="_blank">[slides]</a></li>
-  <li>One paper about the MoE structure of Diffusion Models is accepted by <strong>ICLR 2026</strong>!</li>
-  <li>I provide a  <a href="https://github.com/wanshuiyin/OpenReview-Score-Watcher" target="_blank">Openreview plugin</a> for ICLR 2026!</li>
-  <li>One paper about consistency models is accepted by <strong>ICML 2025</strong>!</li>
-  <li>One paper about improved iteration complexity of VESDE (reverse SDE and PFODE) is accepted by <strong>AISTATS 2025</strong>!</li>
-  <li>Two papers about the iteration complexity of diffusion models (including a training-free method) and few-shot diffusion models are accepted by <strong>NeurIPS 2024</strong>!</li>
-  <li>One paper is accepted by <strong>NeurIPS 2023</strong>!</li>
-  <li>One paper is accepted by <strong>ICLR 2023</strong>!</li>
-  <li>One paper is accepted by <strong>AAAI 2023 (Oral)</strong>!</li>
-</ul>
-  
-<br>
-<h2>Blogs & Tutorials & Talks</h2>
-<ul>
-  <li>Blog on the relationship between diffusion and representation learning and manifold learning (Theory & Application)<a href="./Diffusion_Representation_Manifold.html" target="_blank">[html]</a><a href="./Diffusion_Representation_Manifold.pdf" target="_blank">[pdf]</a</a><a href="./PPT_Diffusion_Representation_Manifold.pdf" target="_blank">[slides]</a></li>
-  <li><a href="./A_simple_understanding_of_diffusion_model.pdf" target="_blank">A simple introduction to diffusion model (Application)</a></li>
-  <li><a href="./20250810_Why RF YangR slides.pdf" target="_blank"> Why Rectified Flow is Better? Elucidating VP, VE, and RF-based diffusion models (Theory)</a></li>
-  <li>A brief survey on some interesting directions about diffusion models (Theory) (Coming Soon)</li>
-</ul>
-  
-<br>
-<h2> Publications </h2>
-<p>As we know, diffusion models can be roughly divided into pretraining, supervised fine-tuning, RL posting training, and sampling algorithm design. My works focus on these four areas.</p>
+    <span class="aris-mark">Generated by <a href="https://github.com/wanshuiyin/ARIS-in-AI-Offer">ARIS-Homepage</a> · fact-checked</span>
+  </footer>
 
-<h3> Diffusion Model MoE Structure and Pretraining </h3>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./MoLR_MoG.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts (ICLR 2026)</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Yongcan Li (Equal Contribution),
-      Bo Jiang,
-      Cheng Chen,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://arxiv.org/abs/2601.01475" target="_blank">ICLR 2026</a>]
-      </small>
-    </td>
-  </tr>
-</table> 
-
-<h3> Diffusion Model Supervised Fine-tuning </h3>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./CELEBA64.PNG">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Few-shot Diffusion Models Escape the Curse of Dimensionality (NeurIPS 2024)</span>
-      <br> 
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Bo Jiang,
-      Cheng Chen,
-      Ruinan Jin,
-      Baoxiang Wang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="./TONGAI.png" target="_blank">Best paper award (2nd Prize), TongAI 2025</a>]
-      [<a href="https://neurips.cc/virtual/2024/poster/95694" target="_blank">NeurIPS 2024</a>] 
-      </small>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./Good_pretrained.jpg">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Evaluating the Role of Great Pre-trained Diffusion Models in Few-shot Phase: Warm-up and Acceleration</span>
-      <br> 
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Yongcan Li (Equal Contribution)
-      Bo Jiang,
-      Cheng Chen,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://openreview.net/forum?id=AcTuU5Xr6r" target="_blank">Preprint</a>] 
-      </small>
-    </td>
-  </tr>
-</table>
-
-<h3> Diffusion Model Post-Training </h3>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./MV_D3PO_C.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Contrastive guidance and feedback: A Suitable way to improve 3D Consistency of Multi-view Diffusion Model</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Le Wan,
-      Yaqing Zhang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://openreview.net/forum?id=ZBH4fqQwJQ" target="_blank">Preprint</a>]
-      </small>
-    </td>
-  </tr>
-</table>
-  
-<h3> Diffusion Model Sampling and Condition Generation </h3>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./RF.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Elucidating Rectified Flow with Deterministic Sampler: Polynomial Discretization Complexity for Multi and One-step Models </span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Zhaoyu Zhu,
-      Bo Jiang,
-      Cheng Chen,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      A talk on [<a href="./20250810_Why RF YangR slides.pdf" target="_blank">CSML 2025</a>]  [<a href="https://www.arxiv.org/abs/2508.08735" target="_blank">Preprint</a>]
-      </small>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./ICML_Consistency .png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Improved Discretization Complexity Analysis of Consistency Models: Variance Exploding Forward Process and Decay Discretization Scheme (ICML 2025)</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Bo Jiang,
-      Cheng Chen,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://openreview.net/forum?id=CZTcRSxkfe" target="_blank">ICML 2025</a>]
-      </small>
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 360px; object-fit: cover; border-radius: 3px;" src="./AISTATS.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">The Polynomial Iteration Complexity for Variance Exploding Diffusion Models: Elucidating SDE and ODE Samplers (AISTATS 2025)</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Bo Jiang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://openreview.net/forum?id=P2PdbGpzxg" target="_blank">AISTATS 2025</a>]
-      </small>
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./More_example_More_figrue.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Leveraging Drift to Improve Sample Complexity of Variance Exploding Diffusion Models (NeurIPS 2024)</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Zhijie Wang,
-      Bo Jiang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://neurips.cc/virtual/2024/poster/94238#:~:text=In%20this%20work%2C%20we%20design%20a%20new%20drifted,models%20with%20reverse%20SDE%20under%20the%20manifold%20hypothesis." target="_blank">NeurIPS 2024</a>]
-      </small>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./Guidance.jpg">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Elucidating Guidance in Variance Exploding Diffusion Models: Fast Convergence and Better Diversity</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Qiuyi Yu,
-      Bo Jiang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://openreview.net/forum?id=tWbasgJA68" target="_blank">Preprint</a>]
-      </small>
-    </td>
-  </tr>
-</table>
-
-<h3> Representation and Reinforcement Learning Theory </h3>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./SSL.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Understanding Representation Learnability of Nonlinear Self-Supervised Learning (AAAI 2023 Oral)</span>
-      <br>
-      <small>
-      <strong>Ruofeng Yang</strong>,
-      Xiangyuan Li,
-      Bo Jiang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://github.com/wanshuiyin/AAAI-2023-The-Learnability-of-Nonlinear-SSL" target="_blank">Code</a>]
-      [<a href="https://arxiv.org/abs/2401.03214#:~:text=Self-supervised%20learning%20%28SSL%29%20has%20empirically%20shown%20its%20data,the%20nonlinear%20neural%20network%20as%20a%20%60%60black%20box%22." target="_blank">AAAI 2023</a>]
-      </small>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./LSUOB-REPS.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Learning Adversarial Linear Mixture Markov Decision Processes with Bandit Feedback and Unknown Transition (ICLR 2023)</span>
-      <br>
-      <small>
-      Canzhe Zhao,
-      <strong>Ruofeng Yang</strong>,
-      Baoxiang Wang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://openreview.net/forum?id=sVU54nyaA9K" target="_blank">ICLR 2023</a>]
-      </small>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="25%">
-      <img style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;" src="./POLO.png">
-    </td>
-    <td valign="middle">
-      <span class="paper-title">Learning Adversarial Low-rank Markov Decision Processes with Unknown Transition and Full-information Feedback (NeurIPS 2023)</span>
-      <br>
-      <small>
-      Canzhe Zhao,
-      <strong>Ruofeng Yang</strong>,
-      Baoxiang Wang,
-      Xuezhou Zhang,
-      <a href="https://shuaili8.github.io/" target="_blank">Shuai Li</a>
-      <br>
-      [<a href="https://arxiv.org/abs/2311.07876" target="_blank">NeurIPS 2023</a>]
-      </small>
-    </td>
-  </tr>
-</table>
-
-<br>
-<h2>Professional Services</h2>
-<p style="margin-bottom: 5px;">Conference Reviewer for</p>
-<ul>
-  <li>International Conference on Machine Learning (ICML) 2025</li>
-  <li>International Conference on Artificial Intelligence and Statistics (AISTATS) 2025</li>
-  <li>International Conference on Learning Representations (ICLR) 2025</li>
-  <li>Neural Information Processing Systems (NeurIPS) 2024</li>
-  <li>Autonomous Agents and Multiagent Systems (AAMAS) 2022</li>
-</ul>
-
-<br>
-<h2>Rewards</h2>
-<ul>
-  <li>National Scholarship (for Ph.D. students), from the Ministry of Education of China </li>
-  <li>Shanghai Jiao Tong University Outstanding Graduates 2022 </li>
-  <li>Outstanding Winner of Mathematical Contest in Modeling (top 0.1%) 2020 </li>
-  <li>Tung Scholarship (Hong Kong's Tung Foundation) 2020 </li>
-  <li>Yang You Scholarship 2019, 2021 </li>
-</ul>
-
-<br>
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=FN865ugXjN6UttwO9Eo85GxLAz0xuyV8vi357-y43ag&cl=ffffff&w=a"></script>
-</td>
-</tr>
-</tbody>
-</table>
-<script type='text/javascript' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=0&t=tt&d=ZoDwnZl26icJVfh0W6PRaWJC8UIjGa9CyHu2YaqgaRI&co=ffffff&ct=ffffff&cmo=ffffff&cmn=ffffff'></script>
-
+</main>
 </body>
 </html>
